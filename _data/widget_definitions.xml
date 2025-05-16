@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget_definitions>
+  <widget_definition definition_id="cb_potw_widget" definition_class="CoderBeams\POTW\Widget\PotwWidget"/>
+</widget_definitions>

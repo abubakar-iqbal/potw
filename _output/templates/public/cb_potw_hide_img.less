@@ -1,0 +1,15 @@
+/* Hide images in post content only, not reaction icons */
+.message-body .bbImage,
+.message-body .bbImageWrapper img,
+.message-body img.bbImage,
+.message-body .bbImageContainer img {
+  display: none !important;
+}
+
+/* Optional: Show a placeholder for hidden images */
+.message-body .bbImage::before,
+.message-body .bbImageWrapper img::before {
+  content: "[Image Hidden]";
+  color: @xf-textColorMuted;
+  display: block;
+}
