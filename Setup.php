@@ -12,4 +12,4 @@ class Setup extends AbstractSetup
     use StepRunnerInstallTrait;
     use StepRunnerUpgradeTrait;
     use StepRunnerUninstallTrait;
-}
+} 
