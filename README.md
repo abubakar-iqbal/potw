@@ -38,7 +38,9 @@ With the latest update, the **Post of the Week (POTW) Add-on** introduces a **fu
 
 ## Front End View:
 
-!\[Front End View]\(Screenshot 2024-08-10 at 7.52.47 PM.webp)
+https://xenforo.com/community/attachments/screenshot-localhost-2025-04-27-21_54_12-webp.321947/
+
+https://xenforo.com/community/attachments/screenshot-localhost-2025-04-28-01_17_09-webp.321951/
 
 ## Why Choose Post of the Week?
 
@@ -51,12 +53,6 @@ If you encounter any issues with the "Post Of The Week" add-on, please report th
 ### **Support**
 
 For support or feature requests, please open an issue on this GitHub repository or join the community on XenForo forums.
-
-### **Donate**
-
-If you find this add-on useful and would like to support further development, please consider making a donation. Your contributions are greatly appreciated and help keep the project going!
-
-[Donate Now](donatenow.webp)
 
 ---
 
