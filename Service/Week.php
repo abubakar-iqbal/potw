@@ -106,4 +106,45 @@ class Week extends AbstractService
 
         return (string)$range['end'];
     }
+
+    public function processDailyPosts(\XF\Entity\User $visitor, array $config): array
+    {
+        $dayPosts = [];
+        $weekendArray = [];
+
+        // Get the start and end of the day (24 hours)
+        $dayStart = strtotime('today 00:00:00');
+        $dayEnd = time(); // Current time (end of the day)
+
+        // Fetch posts made within the last 24 hours
+        $postFinder = $this->finder('XF:Post');
+        $postFinder
+            ->with('User')
+            ->where('post_date', '>=', $dayStart)
+            ->where('post_date', '<=', $dayEnd)
+            ->where('reaction_score', '>=', $config['minimumReaction'])
+            ->setDefaultOrder('reaction_score', 'DESC')
+            ->limit($config['perPage']);
+
+        $posts = $postFinder->fetch();
+
+        // If no posts were found, return empty arrays like processWeeklyPosts
+        if ($posts->count() === 0) {
+            return [
+                'posts' => [],
+                'weekendArray' => $weekendArray,
+            ];
+        }
+
+        // Process posts for display
+        foreach ($posts as $post) {
+            $dayPosts[] = $post; // Add the post to the list of posts for the day
+        }
+
+        return [
+            'posts' => $dayPosts,
+            'weekendArray' => $weekendArray,
+        ];
+    }
+
 }

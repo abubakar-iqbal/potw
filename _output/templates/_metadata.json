@@ -10,13 +10,18 @@
         "hash": "8b4d9a226f5814a8688e880ed040ea7c"
     },
     "public/cb_potw_index.html": {
-        "version_id": 13,
-        "version_string": "1.0.3",
-        "hash": "b980153228294064081b645588a1d6b1"
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "d714a3e860e7471ba96fd85b49012517"
     },
     "public/cb_potw_widget.html": {
         "version_id": 13,
         "version_string": "1.0.3",
         "hash": "c9e5e8cc7d474ef3ea03f574bffea12c"
+    },
+    "public/potw_watch_confirm.html": {
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "4b0e8487c0ee512bce15472d32411d14"
     }
 }
