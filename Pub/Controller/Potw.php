@@ -103,15 +103,16 @@ class Potw extends AbstractController
 
         // Fetch watch preference (already watched)
         $potwWatchRepo = $this->repository('CoderBeams\POTW:Watch');
-        $existingWatch = $potwWatchRepo->getWatchByUser($visitor->user_id, $timeLapse);
 
-        if ($existingWatch) {
-            return $this->error(\XF::phrase('you_are_already_watching_this'));
-        }
+        $isWatched = $potwWatchRepo->getWatchByUser($visitor->user_id, $timeLapse);
+//        if ($existingWatch) {
+//            return $this->error(\XF::phrase('you_are_already_watching_this'));
+//        }
 
         // Display confirmation overlay
         $viewParams = [
             'timeLapse' => $timeLapse,
+            'isWatched' => $isWatched,
         ];
 
         return $this->view('CoderBeams\POTW:WatchConfirm', 'potw_watch_confirm', $viewParams);
@@ -129,7 +130,13 @@ class Potw extends AbstractController
         if (!in_array($timeLapse, ['day', 'week'])) {
             return $this->error(\XF::phrase('invalid_time_lapse'));
         }
+        // If 'stop' is passed, unwatch the POTW
+        if ($this->filter('stop', 'bool')) {
+            // Handle unwatch logic
+            $this->repository('CoderBeams\POTW:Watch')->removeWatch($visitor->user_id, $timeLapse);
 
+            return $this->redirect($this->buildLink('potw'));  // Redirect to POTW page
+        }
         // Initialize the Watch repository
         $potwWatchRepo = $this->repository('CoderBeams\POTW:Watch');
 
@@ -149,22 +156,22 @@ class Potw extends AbstractController
 
         // Save the entity
         $watchEntity->save();
-
-        // Correct way to trigger an alert
-        /** @var \XF\Repository\Alert $alertRepo */
-        $alertRepo = $this->repository('XF:Alert');
-
-        $alert = $alertRepo->createAlert(
-            $visitor->user_id,           // The user who is watching
-            $visitor->user_id,           // The recipient of the alert (same user in this case)
-            'potw_watch',                // The custom content type for Post of the Week Watch
-            [
-                'time_lapse' => $timeLapse, // 'day' or 'week'
-                'watch_date' => time(),    // Timestamp when the user opted to watch
-            ]
-        );
-
-        $alert->send();  // Send the alert to the user
+//
+//        // Correct way to trigger an alert
+//        /** @var \XF\Repository\Alert $alertRepo */
+//        $alertRepo = $this->repository('XF:Alert');
+//
+//        $alert = $alertRepo->createAlert(
+//            $visitor->user_id,           // The user who is watching
+//            $visitor->user_id,           // The recipient of the alert (same user in this case)
+//            'potw_watch',                // The custom content type for Post of the Week Watch
+//            [
+//                'time_lapse' => $timeLapse, // 'day' or 'week'
+//                'watch_date' => time(),    // Timestamp when the user opted to watch
+//            ]
+//        );
+//
+//        $alert->send();  // Send the alert to the user
 
         // Redirect the user back to the page (or wherever appropriate)
         return $this->redirect($this->buildLink('potw'));

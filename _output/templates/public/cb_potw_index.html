@@ -1,16 +1,16 @@
 <xf:if is="$xf.options.cb_potw_hide_images_on_potw_page">
     <xf:css src="cb_potw_hide_img.less"/>
 </xf:if>
+   <!-- Watch Button -->
+    <xf:if is="!$hasAlreadyWatch">
+    <xf:button class="button--primary" data-xf-click="overlay" href="{{ link('potw/watch/confirm','' ,{'timeLapse': {$timeLapse}}) }}" data-params="{'timeLapse': 'day'}">{{ phrase('Watch') }}</xf:button>
+    <xf:else />
+    <xf:button class="button--primary" data-xf-click="overlay" href="{{ link('potw/watch/confirm','' ,{'timeLapse': {$timeLapse}}) }}" data-params="{'timeLapse': 'day'}">{{ phrase('Unwatch') }}</xf:button>
+    </xf:if>
 <xf:if is="$timeLapse == 'day'">
 
 	<xf:title>{{ phrase('cb_potw_index_one_day_title') }}</xf:title>
-       <!-- Watch Button -->
-    <xf:if is="!$visitor.has_watched_potw_day">
-    <xf:button class="button--primary" data-xf-click="overlay" href="{{ link('potw/watch/confirm','' ,{'timeLapse': 'day'}) }}" data-params="{'timeLapse': 'day'}">{{ phrase('watch_potw') }}</xf:button>
-
-    <xf:else />
-        <span>{{ phrase('you_are_watching') }}</span>
-    </xf:if>
+   
 	<xf:if is="$allPosts is not empty">
         <xf:css src="message.less" />
 
