@@ -3,7 +3,13 @@
         "global_cache": false,
         "version_id": 14,
         "version_string": "1.0.4",
-        "hash": "223893a975125a9963bceb37297bee1f"
+        "hash": "5a6d0b04abc70f013d63322842f122ee"
+    },
+    "cb_are_you_sure_you_want_to_watch_potw.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "eb332629b1f3b1b481699de2aa178a7e"
     },
     "cb_potw_index_one_day_title.txt": {
         "global_cache": false,
@@ -21,7 +27,7 @@
         "global_cache": false,
         "version_id": 14,
         "version_string": "1.0.4",
-        "hash": "5f7882a420904ad394940865d22b30c2"
+        "hash": "c4721b383d31e6ed33da3d33215ae16f"
     },
     "cb_view_all_posts_of_the_week.txt": {
         "global_cache": false,

@@ -121,10 +121,8 @@ class Potw extends AbstractController
     public function actionWatch(ParameterBag $params)
     {
         $visitor = \XF::visitor();
-        $timeLapseInt = $this->filter('time_lapse', 'int');  // Get the raw value (0 or 1)
+        $timeLapse = $this->filter('time_lapse', 'str');
 
-        // Map 0 to 'day' and 1 to 'week'
-        $timeLapse = ($timeLapseInt === 1) ? 'week' : 'day';
 
         // Validate time lapse
         if (!in_array($timeLapse, ['day', 'week'])) {

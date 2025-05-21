@@ -12,7 +12,7 @@
     "public/cb_potw_index.html": {
         "version_id": 14,
         "version_string": "1.0.4",
-        "hash": "2348f7737874cc3c812a67c596afb917"
+        "hash": "8051257fcbd6fdc4a5ff35ca9d0ea74d"
     },
     "public/cb_potw_widget.html": {
         "version_id": 13,
@@ -22,6 +22,6 @@
     "public/potw_watch_confirm.html": {
         "version_id": 14,
         "version_string": "1.0.4",
-        "hash": "4b0e8487c0ee512bce15472d32411d14"
+        "hash": "bfd096381287cca117ea43cf8d0c5280"
     }
 }
