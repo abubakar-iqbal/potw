@@ -1,0 +1,1 @@
+{username} approved  <a {profilePageLinkAttributes}>your vouch</a>.

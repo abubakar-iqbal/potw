@@ -1,0 +1,30 @@
+<xf:if is="$isWatched">
+    <xf:title>{{ phrase('cb_unwatch_potw') }}</xf:title>
+<xf:else />
+    <xf:title>{{ phrase('cb_watch_potw') }} {{$timeLapse}}</xf:title>
+</xf:if>
+
+<xf:form action="{{ link('potw/watch', $potw) }}" class="block" ajax="true">
+    <div class="block-container">
+        <div class="block-body">
+            <xf:if is="$isWatched">
+                <xf:inforow rowtype="confirm">
+                    {{ phrase('are_you_sure_you_want_to_unwatch_potw') }}
+                </xf:inforow>
+			<xf:hiddenval name="time_lapse" value="{{$timeLapse}}" />
+                <xf:hiddenval name="stop" value="1" />
+            <xf:else />
+				 <xf:hiddenval name="time_lapse" value="{{$timeLapse}}" />
+				  <xf:inforow rowtype="confirm">
+                    {{ phrase('cb_are_you_sure_you_want_to_watch_potw') }}
+                </xf:inforow>
+            </xf:if>
+        </div>
+
+     		<xf:if is="$isWatched">
+			<xf:submitrow submit="{{ phrase('unwatch') }}" rowtype="simple" />
+		<xf:else />
+			<xf:submitrow submit="{{ phrase('watch') }}" />
+		</xf:if>
+    </div>
+</xf:form>

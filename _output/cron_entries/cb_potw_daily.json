@@ -1,0 +1,17 @@
+{
+    "cron_class": "CoderBeams\\POTW\\Cron\\PotwAlert",
+    "cron_method": "runJob",
+    "run_rules": {
+        "day_type": "dom",
+        "dom": [
+            -1
+        ],
+        "hours": [
+            0
+        ],
+        "minutes": [
+            0
+        ]
+    },
+    "active": true
+}

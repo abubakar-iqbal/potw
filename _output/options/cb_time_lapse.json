@@ -1,0 +1,13 @@
+{
+    "edit_format": "radio",
+    "edit_format_params": "week = {{ phrase('cb_potw_tl_week') }}\nday = {{ phrase('cb_potw_one_day') }}",
+    "data_type": "string",
+    "sub_options": [],
+    "validation_class": "",
+    "validation_method": "",
+    "advanced": false,
+    "default_value": "week",
+    "relations": {
+        "cb_potw": 1
+    }
+}
