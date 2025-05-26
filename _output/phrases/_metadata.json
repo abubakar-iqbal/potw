@@ -11,6 +11,18 @@
         "version_string": "1.0.4",
         "hash": "eb332629b1f3b1b481699de2aa178a7e"
     },
+    "cb_post_of_the_day_updated.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "9fc717771b615468c8afcae2d2d400a5"
+    },
+    "cb_potw_day_alert.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "89d61dcf47ee1d81fbeeeccd69dc86aa"
+    },
     "cb_potw_index_one_day_title.txt": {
         "global_cache": false,
         "version_id": 14,
@@ -22,6 +34,12 @@
         "version_id": 14,
         "version_string": "1.0.4",
         "hash": "7ff1a26c326884c801d887ade65fdbc0"
+    },
+    "cb_potw_week_alert.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "22f625948c44a586d2d2dada3b43a4e8"
     },
     "cb_unwatch_potw.txt": {
         "global_cache": false,
@@ -53,6 +71,18 @@
         "version_string": "1.0.4",
         "hash": "1233c766ddb4f9be75e58e08e495ce12"
     },
+    "cron_entry.cb_potw_daily.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "5d296c631c1b7e24e4c62ee706bd365e"
+    },
+    "cron_entry.potw_weekly.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "bf97423d83a414a2ce81f7d8dde929b1"
+    },
     "option.cb_potw_hide_images_on_potw_page.txt": {
         "global_cache": false,
         "version_id": 10,
@@ -76,6 +106,12 @@
         "version_id": 10,
         "version_string": "1.0.1",
         "hash": "639fefb6295a7e5529e50ead035f0e84"
+    },
+    "potw_watch_alert_day.txt": {
+        "global_cache": false,
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "eded8c887ca129e7e3e2958263c5b20a"
     },
     "widget_def.cb_potw_widget.txt": {
         "global_cache": false,

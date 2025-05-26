@@ -6,7 +6,6 @@ use XF\AddOn\AbstractSetup;
 use XF\AddOn\StepRunnerInstallTrait;
 use XF\AddOn\StepRunnerUninstallTrait;
 use XF\AddOn\StepRunnerUpgradeTrait;
-use XF\Db\Schema\Alter;
 use XF\Db\Schema\Create;
 
 class Setup extends AbstractSetup
@@ -18,7 +17,7 @@ class Setup extends AbstractSetup
     /**
      * Upgrade Step 1: This will run if upgrading the add-on, making sure that necessary changes to the table are applied.
      */
-    public function upgradeStep15(array $stepParams = [])
+    public function upgrade16Step1(array $stepParams = [])
     {
         $schemaManager = $this->schemaManager();
 
@@ -28,11 +27,6 @@ class Setup extends AbstractSetup
             $this->installStep1();  // Call the installStep1 to create the table
         }
 
-        // You can also add other schema changes here if needed (e.g., altering the table)
-        $this->schemaManager()->alterTable('xf_potw_watch', function (Alter $table) {
-            // Example: Add a new column for additional information (e.g., status)
-            // $table->addColumn('status', 'varchar', 255)->setDefault('');
-        });
     }
 
     /**

@@ -126,6 +126,10 @@ class Week extends AbstractService
             ->setDefaultOrder('reaction_score', 'DESC')
             ->limit($config['perPage']);
 
+        $nodeIds = $config['nodeIds'];
+        if (!empty($nodeIds) && !in_array(0, $nodeIds)) {
+            $postFinder->where('Thread.Forum.Node.node_id', $nodeIds);
+        }
         $posts = $postFinder->fetch();
 
         // If no posts were found, return empty arrays like processWeeklyPosts

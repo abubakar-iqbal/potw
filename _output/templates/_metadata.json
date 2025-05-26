@@ -4,6 +4,16 @@
         "version_string": "1.0.3",
         "hash": "9a55df208508b96a933700291082dfda"
     },
+    "public/alert_user_potw_day.html": {
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "9fe48c4a9648aebb748e57b454e5b7b8"
+    },
+    "public/alert_user_potw_week.html": {
+        "version_id": 14,
+        "version_string": "1.0.4",
+        "hash": "47de09a2b3c277eed46066e071457f07"
+    },
     "public/cb_potw_hide_img.less": {
         "version_id": 13,
         "version_string": "1.0.3",
@@ -12,7 +22,7 @@
     "public/cb_potw_index.html": {
         "version_id": 14,
         "version_string": "1.0.4",
-        "hash": "8051257fcbd6fdc4a5ff35ca9d0ea74d"
+        "hash": "d44b49c2b510b5c7f4f2c7c955b52300"
     },
     "public/cb_potw_widget.html": {
         "version_id": 13,

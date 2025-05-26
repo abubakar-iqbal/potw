@@ -3,70 +3,87 @@
 namespace CoderBeams\POTW\Cron;
 
 
-class PotwAlert extends AbstractJob
+class PotwAlert
 {
-    public function runJob()
+    public static function runJob()
     {
-        $watchRepo = \XF::repository('CoderBeams\POTW:Watch');
-        $alertRepo = \XF::repository('XF:Alert');
+        $watchRepo = \XF::app()->repository('CoderBeams\POTW:Watch');
+//        $alertRepo = \XF::app()->repository('XF:Alert');
 
         // Fetch all watches
         $watches = $watchRepo->findAll();
-
+        if (!$watches->count()) {
+            return false; // No watches to process
+        }
         foreach ($watches as $watch) {
-            $userId = $watch->user_id;
             $timeLapse = $watch->time_lapse; // 'day' or 'week'
-
-            // Check when last alerted to avoid spamming
-            $lastAlert = $watch->last_alert_date ?? 0;
-
             // Check if there are any new posts since last alert
-            if ($this->hasNewPosts($timeLapse, $lastAlert)) {
-                // Send alert to user (simple notification)
-                $alertRepo->alert(
-                    $userId,
-                    0, // sender system user
-                    'potw_watch',
-                    [
-                        'time_lapse' => $timeLapse,
-                        'alert_date' => time(),
-                    ]
-                );
+            if (($timeLapse == 'day')) {
+                $alertRepo = \XF::app()->repository('XF:UserAlert');
+                // Create the alert
+                $template = 'potw_day';
+                $title = \XF::phrase('cb_potw_day_alert');
 
-                // Update last_alert_date to now
-                $watch->last_alert_date = time();
-                $watch->save();
+                $extra = [
+                    'title' => $title,
+                    'link' => \XF::app()->router('public')->buildLink('potw'),
+                ];
+
+                $alertRepo->alert(
+                    $watch->User, // User being alerted
+                    $watch->user_id, // Sender (0 indicates system)
+                    '', // Alert title/subject
+                    'user', // Content type for Post of the Week watch alert
+                    $watch->user_id, // Content ID (user)
+                    $template, // Template to use
+                    $extra, // Extra data for the template (e.g., link to POTW)
+                    [] // Extra data (can be left empty)
+                );
             }
         }
 
         return true;
     }
 
-    protected function hasNewPosts(string $timeLapse, int $lastAlert): bool
+    public static function runJobWeekly()
     {
-        $weekService = new \CoderBeams\POTW\Service\Week(\XF::app());
+        $watchRepo = \XF::app()->repository('CoderBeams\POTW:Watch');
+//        $alertRepo = \XF::app()->repository('XF:Alert');
 
-        $config = [
-            'minimumReaction' => 1,  // Adjust per your options
-            'perPage' => 10,
-            'nodeIds' => [],  // or your specific forums
-            'postsInWeeks' => 3,
-            'lastWeeks' => 1,
-        ];
-
-        if ($timeLapse == 'day') {
-            $postsData = $weekService->processDailyPosts(\XF::visitor(), $config);
-            $posts = $postsData['posts'];
-        } else {
-            list($posts,) = $weekService->processWeeklyPosts(\XF::visitor(), $config);
+        // Fetch all watches
+        $watches = $watchRepo->findAll();
+        if (!$watches->count()) {
+            return false; // No watches to process
         }
+        foreach ($watches as $watch) {
+            $userId = $watch->user_id;
+            $timeLapse = $watch->time_lapse; // 'day' or 'week'
+            // Check if there are any new posts since last alert
+            if (($timeLapse == 'week')) {
+                $alertRepo = \XF::app()->repository('XF:UserAlert');
+                // Create the alert
+                $template = 'potw_week';
+                $title = \XF::phrase('cb_potw_week_alert');
 
-        foreach ($posts as $post) {
-            if ($post['post_date'] > $lastAlert) {
-                return true;  // Found a new post since last alert
+                $extra = [
+                    'title' => $title,
+                    'link' => \XF::app()->router('public')->buildLink('potw'),
+                ];
+
+                $alertRepo->alert(
+                    $watch->User, // User being alerted
+                    $watch->user_id, // Sender (0 indicates system)
+                    '', // Alert title/subject
+                    'user', // Content type for Post of the Week watch alert
+                    $watch->user_id, // Content ID (user)
+                    $template, // Template to use
+                    $extra, // Extra data for the template (e.g., link to POTW)
+                    [] // Extra data (can be left empty)
+                );
             }
         }
 
-        return false;  // No new posts since last alert
+        return true;
     }
+
 }

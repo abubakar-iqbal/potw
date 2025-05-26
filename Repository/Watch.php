@@ -75,7 +75,13 @@ class Watch extends Repository
     {
         return $this->finder('CoderBeams\POTW:Watch')
             ->where('time_lapse', $timeLapse)
+            ->with('User')
             ->fetch();
+    }
+
+    public function findAll()
+    {
+        return $this->finder('CoderBeams\POTW:Watch')->with('User')->fetch();
     }
 
     public function hasWatchedPOTW($userId, $timeLapse)

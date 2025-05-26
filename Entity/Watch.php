@@ -23,6 +23,15 @@ class Watch extends Entity
         $structure->getters = [
             'watchDate' => true,  // Allows access to watch_date via $entity->watchDate
         ];
+        $structure->relations = [
+            'User' => [
+                'entity' => 'XF:User',
+                'type' => self::TO_ONE,
+                'conditions' => 'user_id',
+                'primary' => true,
+                'api' => true,
+            ],  // Allows access to watch_date via $entity->watchDate
+        ];
 
         return $structure;
     }

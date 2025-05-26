@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
+  <phrase title="are_you_sure_you_want_to_unwatch_potw" version_id="14" version_string="1.0.4"><![CDATA[Are you sure want to unwatch potw]]></phrase>
+  <phrase title="cb_are_you_sure_you_want_to_watch_potw" version_id="14" version_string="1.0.4"><![CDATA[ Are you sure you want to watch this POTW? ]]></phrase>
   <phrase title="cb_most_liked_posts_month" version_id="1" version_string="1.0.0"><![CDATA[Posts with more reaction score of {month}]]></phrase>
   <phrase title="cb_most_liked_posts_week" version_id="5" version_string="1.0.5"><![CDATA[Week of]]></phrase>
+  <phrase title="cb_post_of_the_day_updated" version_id="14" version_string="1.0.4"><![CDATA[{title}  {target}.]]></phrase>
+  <phrase title="cb_potw_day_alert" version_id="14" version_string="1.0.4"><![CDATA[The post of the day has been updated]]></phrase>
   <phrase title="cb_potw_generator_extra_post_ids" version_id="3" version_string="1.0.3"><![CDATA[Extra posts IDs]]></phrase>
+  <phrase title="cb_potw_index_one_day_title" version_id="14" version_string="1.0.4"><![CDATA[Post of the Day]]></phrase>
   <phrase title="cb_potw_index_title" version_id="5" version_string="1.0.5"><![CDATA[Posts of the Week]]></phrase>
   <phrase title="cb_potw_newsletter_generator_date_limit_explain" version_id="3" version_string="1.0.3"><![CDATA[Fetch posts in X Weeks base on the reaction score.]]></phrase>
   <phrase title="cb_potw_newsletter_generator_extra_thread_ids_explain" version_id="3" version_string="1.0.3"><![CDATA[Always include these posts in newsletter its inject to top of results. Each post ID should be separate by comma (,).]]></phrase>
+  <phrase title="cb_potw_one_day" version_id="14" version_string="1.0.4"><![CDATA[One Day]]></phrase>
   <phrase title="cb_potw_style_expanded" version_id="1" version_string="1.0.0"><![CDATA[Expanded]]></phrase>
   <phrase title="cb_potw_style_full" version_id="1" version_string="1.0.0"><![CDATA[Full]]></phrase>
   <phrase title="cb_potw_style_simple" version_id="1" version_string="1.0.0"><![CDATA[Simple]]></phrase>
@@ -14,7 +20,14 @@
   <phrase title="cb_potw_tl_today" version_id="1" version_string="1.0.0"><![CDATA[Today]]></phrase>
   <phrase title="cb_potw_tl_week" version_id="1" version_string="1.0.0"><![CDATA[Week]]></phrase>
   <phrase title="cb_potw_tl_year" version_id="1" version_string="1.0.0"><![CDATA[Year]]></phrase>
+  <phrase title="cb_potw_week_alert" version_id="14" version_string="1.0.4"><![CDATA[The post of the week has been updated]]></phrase>
+  <phrase title="cb_unwatch_potw" version_id="14" version_string="1.0.4"><![CDATA[Unwatch potw]]></phrase>
   <phrase title="cb_view_all_posts_of_the_week" version_id="13" version_string="1.0.3"><![CDATA[View All POTW Post]]></phrase>
+  <phrase title="cb_watch_post_of_the_day" version_id="14" version_string="1.0.4"><![CDATA[Watch Post Of The Day]]></phrase>
+  <phrase title="cb_watch_post_of_the_week" version_id="14" version_string="1.0.4"><![CDATA[Watch Post of the Week]]></phrase>
+  <phrase title="cb_watch_potw" version_id="14" version_string="1.0.4"><![CDATA[Watch POTW]]></phrase>
+  <phrase title="cron_entry.cb_potw_daily" version_id="14" version_string="1.0.4"><![CDATA[[CB] -Potw watched user daily alert]]></phrase>
+  <phrase title="cron_entry.potw_weekly" version_id="14" version_string="1.0.4"><![CDATA[[CB]- Post of the weekly alert]]></phrase>
   <phrase title="nav.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[POTW]]></phrase>
   <phrase title="option.cb_enable_potw_on_pub_nav" version_id="8" version_string="1.0.8"><![CDATA[Enable POTW On Public Navigation]]></phrase>
   <phrase title="option.cb_limit_post_per_week" version_id="1" version_string="1.0.0"><![CDATA[Posts Per Week]]></phrase>
@@ -36,6 +49,7 @@
   <phrase title="option_explain.cb_time_lapse" version_id="1" version_string="1.0.0"><![CDATA[Select the timeLapse to show the more reaction post on the page.]]></phrase>
   <phrase title="option_group.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[Post of the week]]></phrase>
   <phrase title="option_group_description.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[All settings regarding POTW are listed here.]]></phrase>
+  <phrase title="potw_watch_alert_day" version_id="14" version_string="1.0.4"><![CDATA[{username} approved  <a {profilePageLinkAttributes}>your vouch</a>.]]></phrase>
   <phrase title="widget_def.cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[Post of Week]]></phrase>
   <phrase title="widget_def_desc.cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[Post of the week]]></phrase>
 </phrases>

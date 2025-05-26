@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<cron/>
+<cron>
+  <entry entry_id="cb_potw_daily" cron_class="CoderBeams\POTW\Cron\PotwAlert" cron_method="runJob" active="1"><![CDATA[{"day_type":"dom","dom":[-1],"hours":[0],"minutes":[0]}]]></entry>
+  <entry entry_id="potw_weekly" cron_class="CoderBeams\POTW\Cron\PotwAlert" cron_method="runJobWeekly" active="1"><![CDATA[{"day_type":"dow","dow":[1],"hours":[0],"minutes":[0]}]]></entry>
+</cron>
