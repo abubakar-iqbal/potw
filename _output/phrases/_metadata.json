@@ -11,6 +11,18 @@
         "version_string": "1.0.4",
         "hash": "eb332629b1f3b1b481699de2aa178a7e"
     },
+    "cb_most_liked_posts_month.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "1163551faadc828b000f33f874513c10"
+    },
+    "cb_most_liked_posts_week.txt": {
+        "global_cache": false,
+        "version_id": 5,
+        "version_string": "1.0.5",
+        "hash": "29ac8d38f085cdc1a7c1877bcdad2fd5"
+    },
     "cb_post_of_the_day_updated.txt": {
         "global_cache": false,
         "version_id": 14,
@@ -29,17 +41,77 @@
         "version_string": "1.0.4",
         "hash": "fa2d18e2ded29eda59e0b08fca3bad9f"
     },
+    "cb_potw_index_title.txt": {
+        "global_cache": false,
+        "version_id": 5,
+        "version_string": "1.0.5",
+        "hash": "e82d50c067142908424cc17229d57d25"
+    },
     "cb_potw_one_day.txt": {
         "global_cache": false,
         "version_id": 14,
         "version_string": "1.0.4",
         "hash": "7ff1a26c326884c801d887ade65fdbc0"
     },
+    "cb_potw_style_expanded.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "63f6baf1d88963b8c8210751c8530e94"
+    },
+    "cb_potw_style_full.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "bbd47109890259c0127154db1af26c75"
+    },
+    "cb_potw_style_simple.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "1fbb1e3943c2c6c560247ac8f9289780"
+    },
+    "cb_potw_tl_alltime.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "60dd022145dd29fa7be7a5e84f85b0e6"
+    },
+    "cb_potw_tl_month.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "7cbb885aa1164b390a0bc050a64e1812"
+    },
+    "cb_potw_tl_today.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "1dd1c5fb7f25cd41b291d43a89e3aefd"
+    },
+    "cb_potw_tl_week.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "d2ce009594dcc60befa6a4e6cbeb71fc"
+    },
+    "cb_potw_tl_year.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "537c66b24ef5c83b7382cdc3f34885f2"
+    },
     "cb_potw_week_alert.txt": {
         "global_cache": false,
         "version_id": 14,
         "version_string": "1.0.4",
         "hash": "22f625948c44a586d2d2dada3b43a4e8"
+    },
+    "cb_potw_wins.txt": {
+        "global_cache": false,
+        "version_id": 18,
+        "version_string": "1.0.8",
+        "hash": "331a5573f8554855c5528ed06c2e575e"
     },
     "cb_unwatch_potw.txt": {
         "global_cache": false,
@@ -77,11 +149,47 @@
         "version_string": "1.0.4",
         "hash": "5d296c631c1b7e24e4c62ee706bd365e"
     },
+    "cron_entry.cb_potw_record_winner.txt": {
+        "global_cache": false,
+        "version_id": 19,
+        "version_string": "1.0.9",
+        "hash": "59072a367f0b27baffceed1a10167c56"
+    },
     "cron_entry.potw_weekly.txt": {
         "global_cache": false,
         "version_id": 14,
         "version_string": "1.0.4",
         "hash": "bf97423d83a414a2ce81f7d8dde929b1"
+    },
+    "nav.cb_potw.txt": {
+        "global_cache": false,
+        "version_id": 18,
+        "version_string": "1.0.8",
+        "hash": "331a5573f8554855c5528ed06c2e575e"
+    },
+    "option.cb_enable_potw_on_pub_nav.txt": {
+        "global_cache": false,
+        "version_id": 8,
+        "version_string": "1.0.8",
+        "hash": "0a0da5fa0f1fe063e550fcf67a227434"
+    },
+    "option.cb_limit_post_per_week.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "0df159d697d3ceb78ee9abee4da9b976"
+    },
+    "option.cb_posts_weeks.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "d4c26b8c90b23bf138462ee442049d31"
+    },
+    "option.cb_potw_applicable_forum.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "dd880eee1e6ece4314b11f3a606c5304"
     },
     "option.cb_potw_hide_images_on_potw_page.txt": {
         "global_cache": false,
@@ -95,6 +203,48 @@
         "version_string": "1.0.1",
         "hash": "025f396810c3210b604e4671e44a1049"
     },
+    "option.cb_potw_per_page.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "218617da2fefc34692bba123db3f9581"
+    },
+    "option.cb_potw_reaction_limit.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "8478afa1e185fe4e9dc9cee1d9a71271"
+    },
+    "option.cb_time_lapse.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "648cacb3ad476b1e3f35277e1b4fa4bd"
+    },
+    "option_explain.cb_enable_potw_on_pub_nav.txt": {
+        "global_cache": false,
+        "version_id": 8,
+        "version_string": "1.0.8",
+        "hash": "1ac9fc3323f1d9650dcbd62272cbb75c"
+    },
+    "option_explain.cb_limit_post_per_week.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "08d93e2c4fc646802bc388427bfe155e"
+    },
+    "option_explain.cb_posts_weeks.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "fdb2a39a7e9bae4bdf5798c4eb4fbbff"
+    },
+    "option_explain.cb_potw_applicable_forum.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "f2d92cd4c124b7ab577e8a05d16f5a8d"
+    },
     "option_explain.cb_potw_hide_images_on_potw_page.txt": {
         "global_cache": false,
         "version_id": 10,
@@ -106,6 +256,36 @@
         "version_id": 10,
         "version_string": "1.0.1",
         "hash": "639fefb6295a7e5529e50ead035f0e84"
+    },
+    "option_explain.cb_potw_per_page.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "df3097a93bc296609258f6b32af8cdc5"
+    },
+    "option_explain.cb_potw_reaction_limit.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "77688e6d225c0d6ede3ea8375861f341"
+    },
+    "option_explain.cb_time_lapse.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "4e504da19145efa2375898e6c7d31b25"
+    },
+    "option_group.cb_potw.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "593895f8914bbf5dc163f4f9e4b3e2be"
+    },
+    "option_group_description.cb_potw.txt": {
+        "global_cache": false,
+        "version_id": 1,
+        "version_string": "1.0.0",
+        "hash": "836423273f852f32a370b4ab6199aa8e"
     },
     "potw_watch_alert_day.txt": {
         "global_cache": false,

@@ -15,8 +15,8 @@
         "hash": "47de09a2b3c277eed46066e071457f07"
     },
     "public/cb_potw_hide_img.less": {
-        "version_id": 13,
-        "version_string": "1.0.3",
+        "version_id": 17,
+        "version_string": "1.0.7",
         "hash": "8b4d9a226f5814a8688e880ed040ea7c"
     },
     "public/cb_potw_index.html": {
@@ -27,7 +27,7 @@
     "public/cb_potw_widget.html": {
         "version_id": 13,
         "version_string": "1.0.3",
-        "hash": "c9e5e8cc7d474ef3ea03f574bffea12c"
+        "hash": "2c07694be96e7c9cbd3f8767547af590"
     },
     "public/potw_watch_confirm.html": {
         "version_id": 14,

@@ -26,10 +26,12 @@ class PotwWidget extends AbstractWidget
         $visitor = \XF::visitor();
         $options = \XF::options();
 
+        $timeLapse = $options->cb_time_lapse ?? 'week';
+
         $config = [
             'page' => 1,
             'perPage' => $limit,
-            'timeLapse' => $options->cb_potw_time_lapse ?? 'week',
+            'timeLapse' => $timeLapse,
             'nodeIds' => $options->cb_potw_applicable_forum ?? [],
             'minimumReaction' => $options->cb_potw_reaction_limit ?? 1,
             'postsInWeeks' => $options->cb_limit_post_per_week ?? 3,
@@ -37,11 +39,21 @@ class PotwWidget extends AbstractWidget
         ];
 
         $weekService = new \CoderBeams\POTW\Service\Week($this->app);
-        [$allPosts, $weekendArray] = $weekService->processWeeklyPosts($visitor, $config);
+
+        if ($timeLapse === 'day') {
+            $day = $weekService->processDailyPosts($visitor, $config);
+            $allPosts = $day['posts'];
+            $weekendArray = $allPosts
+                ? [(string)\XF::$time => array_column($allPosts, 'post_id')]
+                : [];
+        } else {
+            [$allPosts, $weekendArray] = $weekService->processWeeklyPosts($visitor, $config);
+        }
 
         return $this->renderer('cb_potw_widget', [
             'allPosts' => array_slice($allPosts, 0, $limit),
             'weekendArray' => $weekendArray,
+            'timeLapse' => $timeLapse,
             'snippet_length' => $snippetLength,
             'hideImage' => $hideImage,
             'style' => $style,

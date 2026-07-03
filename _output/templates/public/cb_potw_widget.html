@@ -11,7 +11,11 @@
 
             <xf:foreach loop="$weekendArray" key="$weekKey" value="$postIds" if="$loop.index == 0">
                 <h4 class="block-minorHeader">
-                    {{ phrase('cb_most_liked_posts_week') }} {{ date($weekKey) }}
+                    <xf:if is="$timeLapse == 'day'">
+                        {{ phrase('cb_potw_index_one_day_title') }}
+                    <xf:else />
+                        {{ phrase('cb_most_liked_posts_week') }} {{ date($weekKey) }}
+                    </xf:if>
                 </h4>
 
                 <div class="block-body">

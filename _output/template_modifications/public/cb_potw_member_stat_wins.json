@@ -1,0 +1,9 @@
+{
+    "template": "member_macros",
+    "description": "Show POTW win count on member profile stats",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--[XF:stat_pairs:above_trophies]-->",
+    "replace": "<xf:if is=\"$user.cb_potw_count\">\n\t\t<dl class=\"pairs pairs--rows pairs--rows--centered\">\n\t\t\t<dt>{{ phrase('cb_potw_wins') }}</dt>\n\t\t\t<dd>{$user.cb_potw_count|number}</dd>\n\t\t</dl>\n\t</xf:if>\n\t$0"
+}

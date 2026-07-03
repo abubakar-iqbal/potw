@@ -1,0 +1,1 @@
+If enabled, it will show on the public navigation.

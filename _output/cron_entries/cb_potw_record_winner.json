@@ -1,0 +1,17 @@
+{
+    "cron_class": "CoderBeams\\POTW\\Cron\\PotwWinner",
+    "cron_method": "recordWeekly",
+    "run_rules": {
+        "day_type": "dow",
+        "dow": [
+            1
+        ],
+        "hours": [
+            0
+        ],
+        "minutes": [
+            5
+        ]
+    },
+    "active": true
+}

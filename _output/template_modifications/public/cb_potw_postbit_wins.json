@@ -1,0 +1,9 @@
+{
+    "template": "message_macros",
+    "description": "Show POTW win count in message user info (postbit)",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$extras.solutions AND $user.question_solution_count\">",
+    "replace": "<xf:if is=\"$user.cb_potw_count\">\n\t\t\t\t\t\t<dl class=\"pairs pairs--justified\">\n\t\t\t\t\t\t\t<dt>{{ phrase('cb_potw_wins') }}</dt>\n\t\t\t\t\t\t\t<dd>{$user.cb_potw_count|number}</dd>\n\t\t\t\t\t\t</dl>\n\t\t\t\t\t</xf:if>\n\t\t\t\t\t$0"
+}

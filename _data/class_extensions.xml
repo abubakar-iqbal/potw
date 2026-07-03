@@ -2,4 +2,5 @@
 <class_extensions>
   <extension from_class="XF\Entity\Post" to_class="CoderBeams\POTW\XF\Entity\Post" execute_order="10" active="1"/>
   <extension from_class="XF\Entity\Thread" to_class="CoderBeams\POTW\XF\Entity\Thread" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\User" to_class="CoderBeams\POTW\XF\Entity\User" execute_order="10" active="1"/>
 </class_extensions>

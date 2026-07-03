@@ -1,9 +1,27 @@
 {
+    "cb_enable_potw_on_pub_nav.json": {
+        "hash": "965010f4a03e0dc07fd9d811ce1a261b"
+    },
+    "cb_limit_post_per_week.json": {
+        "hash": "6265eff3d0d309b16e9665ebd21334f9"
+    },
+    "cb_posts_weeks.json": {
+        "hash": "640b1139ba3d8f851730d378948dda78"
+    },
+    "cb_potw_applicable_forum.json": {
+        "hash": "f9125eedfec153319b7eb265afefa42d"
+    },
     "cb_potw_hide_images_on_potw_page.json": {
         "hash": "6aa5ee416a52bd78aa8fa0517c5144a9"
     },
     "cb_potw_limit_char.json": {
         "hash": "727e97da5fd93be9a248a5c78e8a1687"
+    },
+    "cb_potw_per_page.json": {
+        "hash": "b56dfbc82efd5e7f93d161b9bcb9cc18"
+    },
+    "cb_potw_reaction_limit.json": {
+        "hash": "9cb56c5b46b7ca21b9c232ef78db2dba"
     },
     "cb_time_lapse.json": {
         "hash": "dfffcecdaeca86062336f3b77507f940"

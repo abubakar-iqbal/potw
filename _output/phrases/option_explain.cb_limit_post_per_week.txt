@@ -1,0 +1,1 @@
+Number of post want to show in one week.
