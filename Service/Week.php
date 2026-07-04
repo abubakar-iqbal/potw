@@ -23,6 +23,9 @@ class Week extends AbstractService
             return [[], []];
         }
 
+        // fill option-derived criteria the caller didn't set (e.g. excludeThreadIds)
+        $config += $this->getQualifyingConfigFromOptions();
+
         $lastWeeks = max(1, (int)$config['lastWeeks']);
 
         $weeks = [];
@@ -89,6 +92,7 @@ class Week extends AbstractService
             $config['nodeIds'],
             $config['minimumReaction'],
             $config['postsInWeeks'],
+            $config['excludeThreadIds'] ?? [],
         ]));
 
         // Multiple slots: visitors in different timezones produce different
@@ -151,6 +155,11 @@ class Week extends AbstractService
             $finder->where('Thread.node_id', $nodeIds);
         }
 
+        $excludeThreadIds = $config['excludeThreadIds'] ?? [];
+        if (!empty($excludeThreadIds)) {
+            $finder->where('thread_id', '!=', $excludeThreadIds);
+        }
+
         return $finder;
     }
 
@@ -164,7 +173,31 @@ class Week extends AbstractService
         return [
             'minimumReaction' => $options->cb_potw_reaction_limit ?? 1,
             'nodeIds' => $options->cb_potw_applicable_forum ?? [],
+            'excludeThreadIds' => $this->getExcludedThreadIds(),
         ];
+    }
+
+    /**
+     * Thread IDs excluded from POTW, parsed from the comma-separated option
+     *
+     * @return int[]
+     */
+    public function getExcludedThreadIds(): array
+    {
+        $raw = (string)($this->app->options()->cb_potw_exclude_thread_ids ?? '');
+        if ($raw === '') {
+            return [];
+        }
+
+        $ids = [];
+        foreach (preg_split('/[\s,]+/', $raw, -1, PREG_SPLIT_NO_EMPTY) as $part) {
+            $id = (int)$part;
+            if ($id > 0) {
+                $ids[] = $id;
+            }
+        }
+
+        return array_unique($ids);
     }
 
     /**
@@ -199,6 +232,12 @@ class Week extends AbstractService
         $nodeCondition = '';
         if (!empty($nodeIds) && !in_array(0, $nodeIds)) {
             $nodeCondition = 'AND thread.node_id IN (' . $db->quote(array_map('intval', $nodeIds)) . ')';
+        }
+
+        $excludeThreadIds = $config['excludeThreadIds'] ?? [];
+        if (!empty($excludeThreadIds)) {
+            $nodeCondition .= ' AND post.thread_id NOT IN ('
+                . $db->quote(array_map('intval', $excludeThreadIds)) . ')';
         }
 
         $results = $db->fetchAll("
@@ -306,6 +345,9 @@ class Week extends AbstractService
 
     public function processDailyPosts(\XF\Entity\User $visitor, array $config): array
     {
+        // fill option-derived criteria the caller didn't set (e.g. excludeThreadIds)
+        $config += $this->getQualifyingConfigFromOptions();
+
         // Rolling 24-hour window, matching the daily alert cron's check -
         // a calendar-day window is empty right after midnight, exactly when
         // the cron-alerted users arrive

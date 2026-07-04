@@ -11,6 +11,9 @@
     "cb_potw_applicable_forum.json": {
         "hash": "f9125eedfec153319b7eb265afefa42d"
     },
+    "cb_potw_exclude_thread_ids.json": {
+        "hash": "4a78e04fa90ca32345e92717aa17f521"
+    },
     "cb_potw_hide_images_on_potw_page.json": {
         "hash": "6aa5ee416a52bd78aa8fa0517c5144a9"
     },

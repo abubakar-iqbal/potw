@@ -191,6 +191,12 @@
         "version_string": "1.0.0",
         "hash": "dd880eee1e6ece4314b11f3a606c5304"
     },
+    "option.cb_potw_exclude_thread_ids.txt": {
+        "global_cache": false,
+        "version_id": 19,
+        "version_string": "1.0.9",
+        "hash": "d87b8333914b755327a8466cfcb4b36a"
+    },
     "option.cb_potw_hide_images_on_potw_page.txt": {
         "global_cache": false,
         "version_id": 10,
@@ -244,6 +250,12 @@
         "version_id": 1,
         "version_string": "1.0.0",
         "hash": "f2d92cd4c124b7ab577e8a05d16f5a8d"
+    },
+    "option_explain.cb_potw_exclude_thread_ids.txt": {
+        "global_cache": false,
+        "version_id": 19,
+        "version_string": "1.0.9",
+        "hash": "e4c02cbd54157889fda79e11934e7ecd"
     },
     "option_explain.cb_potw_hide_images_on_potw_page.txt": {
         "global_cache": false,

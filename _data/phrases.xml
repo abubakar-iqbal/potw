@@ -32,6 +32,7 @@
   <phrase title="option.cb_limit_post_per_week" version_id="1" version_string="1.0.0"><![CDATA[Posts Per Week]]></phrase>
   <phrase title="option.cb_posts_weeks" version_id="1" version_string="1.0.0"><![CDATA[Post Weeks]]></phrase>
   <phrase title="option.cb_potw_applicable_forum" version_id="1" version_string="1.0.0"><![CDATA[Applicable Forum]]></phrase>
+  <phrase title="option.cb_potw_exclude_thread_ids" version_id="19" version_string="1.0.9"><![CDATA[Exclude Thread IDs]]></phrase>
   <phrase title="option.cb_potw_hide_images_on_potw_page" version_id="10" version_string="1.0.1"><![CDATA[Hide Images On Post]]></phrase>
   <phrase title="option.cb_potw_limit_char" version_id="10" version_string="1.0.1"><![CDATA[Limit Char]]></phrase>
   <phrase title="option.cb_potw_per_page" version_id="1" version_string="1.0.0"><![CDATA[Post Per Page]]></phrase>
@@ -41,6 +42,7 @@
   <phrase title="option_explain.cb_limit_post_per_week" version_id="1" version_string="1.0.0"><![CDATA[Number of post want to show in one week.]]></phrase>
   <phrase title="option_explain.cb_posts_weeks" version_id="1" version_string="1.0.0"><![CDATA[Please enter the number of weeks you want to show their weeks.]]></phrase>
   <phrase title="option_explain.cb_potw_applicable_forum" version_id="1" version_string="1.0.0"><![CDATA[Select the applicable forums. If select "None" all forum will be considered.]]></phrase>
+  <phrase title="option_explain.cb_potw_exclude_thread_ids" version_id="19" version_string="1.0.9"><![CDATA[Please enter comma separated IDs of the threads. Posts from these threads won't show on the POTW page.]]></phrase>
   <phrase title="option_explain.cb_potw_hide_images_on_potw_page" version_id="10" version_string="1.0.1"><![CDATA[If selected, the images of the post will hide from the post.]]></phrase>
   <phrase title="option_explain.cb_potw_limit_char" version_id="10" version_string="1.0.1"><![CDATA[Entered the number of words will be shown by default.]]></phrase>
   <phrase title="option_explain.cb_potw_per_page" version_id="1" version_string="1.0.0"><![CDATA[Please enter the number you want to show on the homepage.]]></phrase>

@@ -15,6 +15,7 @@ namespace XF;
  * @property int|null $cb_limit_post_per_week Posts Per Week
  * @property int|null $cb_posts_weeks Post Weeks
  * @property array|null $cb_potw_applicable_forum Applicable Forum
+ * @property string|null $cb_potw_exclude_thread_ids Exclude Thread IDs
  * @property bool|null $cb_potw_hide_images_on_potw_page Hide Images On Post
  * @property int|null $cb_potw_limit_char Limit Char
  * @property int|null $cb_potw_per_page Post Per Page

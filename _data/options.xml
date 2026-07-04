@@ -18,6 +18,10 @@
     <sub_options>*</sub_options>
     <relation group_id="cb_potw" display_order="1"/>
   </option>
+  <option option_id="cb_potw_exclude_thread_ids" edit_format="textbox" data_type="string" advanced="0">
+    <default_value></default_value>
+    <relation group_id="cb_potw" display_order="4"/>
+  </option>
   <option option_id="cb_potw_hide_images_on_potw_page" edit_format="onoff" data_type="boolean" advanced="0">
     <default_value>0</default_value>
     <relation group_id="cb_potw" display_order="1"/>

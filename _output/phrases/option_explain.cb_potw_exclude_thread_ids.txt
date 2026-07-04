@@ -1,0 +1,1 @@
+Please enter comma separated IDs of the threads. Posts from these threads won't show on the POTW page.
