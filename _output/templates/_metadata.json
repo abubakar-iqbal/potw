@@ -20,9 +20,14 @@
         "hash": "8b4d9a226f5814a8688e880ed040ea7c"
     },
     "public/cb_potw_index.html": {
-        "version_id": 14,
-        "version_string": "1.0.4",
-        "hash": "d44b49c2b510b5c7f4f2c7c955b52300"
+        "version_id": 19,
+        "version_string": "1.0.9",
+        "hash": "b04a6abe19664a9f9a9539915b1a480a"
+    },
+    "public/cb_potw_promote_confirm.html": {
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "b8639f6e4dfabb860d9911216e8912c5"
     },
     "public/cb_potw_widget.html": {
         "version_id": 13,

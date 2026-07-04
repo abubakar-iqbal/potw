@@ -12,6 +12,75 @@
 <xf:if is="$xf.options.cb_potw_hide_images_on_potw_page">
     <xf:css src="cb_potw_hide_img.less"/>
 </xf:if>
+
+<!-- Manually promoted posts, pinned on top until their week ends -->
+<xf:if is="$promotedPosts is not empty AND $page == 1">
+    <xf:css src="message.less" />
+
+    <div class="blocks">
+        <h2 class="block-header block-formSectionHeader">
+            <span>{{ phrase('cb_potw_promoted_posts') }}</span>
+        </h2>
+
+        <div class="block-body">
+            <xf:foreach loop="$promotedPosts" value="$post">
+                <div class="block-container recent_news" data-xf-init="lightbox">
+                    <h4 class="block-header">
+                        <a href="{{ link('threads/post', $post.Thread, {'post_id': $post.post_id}) }}">
+                            {$post.Thread.title}
+                        </a>
+                        <span class="label label--accent">{{ phrase('cb_potw_promoted_badge') }}</span>
+                    </h4>
+
+                    <div class="block-body">
+                        <div class="message message--post">
+                            <div class="message-inner">
+                                <div class="message-cell message-cell--main">
+                                    <div class="message-content js-messageContent">
+                                        <header class="message-attribution">
+                                            <ul class="listInline listInline--bullet u-muted">
+                                                <xf:avatar user="$post.User" size="xxs" defaultname="{$post.username}" />
+                                                <li><xf:username user="{$post.User}" rich="true" /></li>
+                                                <li><xf:date time="{$post.post_date}" /></li>
+                                                <li><a href="{{ link('forums', $post.Thread.Forum) }}">{$post.Thread.Forum.title}</a></li>
+                                            </ul>
+                                        </header>
+
+                                        <div class="message-userContent lbContainer js-lbContainer"
+                                            data-lb-id="post-{$post.post_id}"
+                                            data-lb-caption-desc="{{ $post.User ? $post.User.username : $post.username }} &middot; {{ date_time($post.post_date) }}">
+
+                                            <article class="message-body">
+                                                <xf:if is="$xf.options.cb_potw_limit_char > 0">
+                                                    <xf:set var="$snippetPost" value="{{ snippet($post.message, $xf.options.cb_potw_limit_char) }}" />
+                                                    {{ bb_code($snippetPost, 'post', $post) }}
+                                                    <div>
+                                                        <a href="{{ link('threads/post', $post.Thread, {'post_id': $post.post_id}) }}">
+                                                            {{ phrase('continue_reading') }}
+                                                        </a>
+                                                    </div>
+                                                <xf:else />
+                                                    {{ bb_code($post.message, 'post', $post) }}
+                                                </xf:if>
+
+                                                <footer class="message-footer">
+                                                    <div class="reactionsBar js-reactionsList {{ $post.reactions ? 'is-active' : '' }}">
+                                                        <xf:reactions content="{$post}" link="posts/reactions" />
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xf:foreach>
+        </div>
+    </div>
+</xf:if>
+
 <xf:if is="$timeLapse == 'day'">
 
 	<xf:title>{{ phrase('cb_potw_index_one_day_title') }}</xf:title>

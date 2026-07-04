@@ -39,7 +39,7 @@
   color: @xf-textColorMuted;
   display: block;
 }]]></template>
-  <template type="public" title="cb_potw_index" version_id="14" version_string="1.0.4"><![CDATA[<div class="block-outer-opposite">
+  <template type="public" title="cb_potw_index" version_id="19" version_string="1.0.9"><![CDATA[<div class="block-outer-opposite">
 
    <!-- Watch Button -->
     <xf:if is="!$hasAlreadyWatch">
@@ -53,6 +53,75 @@
 <xf:if is="$xf.options.cb_potw_hide_images_on_potw_page">
     <xf:css src="cb_potw_hide_img.less"/>
 </xf:if>
+
+<!-- Manually promoted posts, pinned on top until their week ends -->
+<xf:if is="$promotedPosts is not empty AND $page == 1">
+    <xf:css src="message.less" />
+
+    <div class="blocks">
+        <h2 class="block-header block-formSectionHeader">
+            <span>{{ phrase('cb_potw_promoted_posts') }}</span>
+        </h2>
+
+        <div class="block-body">
+            <xf:foreach loop="$promotedPosts" value="$post">
+                <div class="block-container recent_news" data-xf-init="lightbox">
+                    <h4 class="block-header">
+                        <a href="{{ link('threads/post', $post.Thread, {'post_id': $post.post_id}) }}">
+                            {$post.Thread.title}
+                        </a>
+                        <span class="label label--accent">{{ phrase('cb_potw_promoted_badge') }}</span>
+                    </h4>
+
+                    <div class="block-body">
+                        <div class="message message--post">
+                            <div class="message-inner">
+                                <div class="message-cell message-cell--main">
+                                    <div class="message-content js-messageContent">
+                                        <header class="message-attribution">
+                                            <ul class="listInline listInline--bullet u-muted">
+                                                <xf:avatar user="$post.User" size="xxs" defaultname="{$post.username}" />
+                                                <li><xf:username user="{$post.User}" rich="true" /></li>
+                                                <li><xf:date time="{$post.post_date}" /></li>
+                                                <li><a href="{{ link('forums', $post.Thread.Forum) }}">{$post.Thread.Forum.title}</a></li>
+                                            </ul>
+                                        </header>
+
+                                        <div class="message-userContent lbContainer js-lbContainer"
+                                            data-lb-id="post-{$post.post_id}"
+                                            data-lb-caption-desc="{{ $post.User ? $post.User.username : $post.username }} &middot; {{ date_time($post.post_date) }}">
+
+                                            <article class="message-body">
+                                                <xf:if is="$xf.options.cb_potw_limit_char > 0">
+                                                    <xf:set var="$snippetPost" value="{{ snippet($post.message, $xf.options.cb_potw_limit_char) }}" />
+                                                    {{ bb_code($snippetPost, 'post', $post) }}
+                                                    <div>
+                                                        <a href="{{ link('threads/post', $post.Thread, {'post_id': $post.post_id}) }}">
+                                                            {{ phrase('continue_reading') }}
+                                                        </a>
+                                                    </div>
+                                                <xf:else />
+                                                    {{ bb_code($post.message, 'post', $post) }}
+                                                </xf:if>
+
+                                                <footer class="message-footer">
+                                                    <div class="reactionsBar js-reactionsList {{ $post.reactions ? 'is-active' : '' }}">
+                                                        <xf:reactions content="{$post}" link="posts/reactions" />
+                                                    </div>
+                                                </footer>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xf:foreach>
+        </div>
+    </div>
+</xf:if>
+
 <xf:if is="$timeLapse == 'day'">
 
 	<xf:title>{{ phrase('cb_potw_index_one_day_title') }}</xf:title>
@@ -199,7 +268,23 @@
         </div>
     </xf:if>
 </xf:if>]]></template>
-  <template type="public" title="cb_potw_widget" version_id="19" version_string="1.0.9"><![CDATA[<xf:if is="$allPosts is not empty && $weekendArray">
+  <template type="public" title="cb_potw_promote_confirm" version_id="20" version_string="1.0.10"><![CDATA[<xf:title>{{ phrase('cb_potw_promote_post') }}</xf:title>
+
+<xf:form action="{{ link('posts/potw-promote', $post) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<div class="block-row">
+				<xf:if is="$post.isPotwPromoted()">
+					{{ phrase('cb_potw_demote_confirm') }}
+				<xf:else />
+					{{ phrase('cb_are_you_sure_promote_post') }}
+				</xf:if>
+			</div>
+		</div>
+		<xf:submitrow submit="{{ $post.isPotwPromoted() ? phrase('cb_potw_demote') : phrase('cb_potw_promote') }}" />
+	</div>
+</xf:form>]]></template>
+  <template type="public" title="cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[<xf:if is="$allPosts is not empty && $weekendArray">
     <xf:css src="message.less" />
 <xf:if is="$hideImage">
     <xf:css src="cb_potw_hide_img.less"/>

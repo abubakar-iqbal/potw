@@ -13,3 +13,8 @@ namespace CoderBeams\POTW\XF\Entity
 	class XFCP_Thread extends \XF\Entity\Thread {}
 	class XFCP_User extends \XF\Entity\User {}
 }
+
+namespace CoderBeams\POTW\XF\Pub\Controller
+{
+	class XFCP_Post extends \XF\Pub\Controller\Post {}
+}

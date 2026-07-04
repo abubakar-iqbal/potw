@@ -1,0 +1,9 @@
+{
+    "template": "post_macros",
+    "description": "Add \"Promote POTW\" link to the post action bar",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:react content=\"{$post}\" link=\"posts/react\" list=\"< .js-post | .js-reactionsList\" />",
+    "replace": "$0\n\n\t\t\t<xf:if is=\"$post.canPromoteToPotw()\">\n\t\t\t\t<a href=\"{{ link('posts/potw-promote', $post) }}\"\n\t\t\t\t\tclass=\"actionBar-action actionBar-action--potwPromote\"\n\t\t\t\t\tdata-xf-click=\"overlay\"\n\t\t\t\t\trel=\"nofollow\">{{ $post.isPotwPromoted() ? phrase('cb_potw_demote') : phrase('cb_potw_promote') }}</a>\n\t\t\t</xf:if>"
+}

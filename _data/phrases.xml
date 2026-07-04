@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
   <phrase title="are_you_sure_you_want_to_unwatch_potw" version_id="14" version_string="1.0.4"><![CDATA[Are you sure want to unwatch potw]]></phrase>
+  <phrase title="cb_are_you_sure_promote_post" version_id="20" version_string="1.0.10"><![CDATA[Are you sure you want to promote this post? It will be pinned on top of the POTW page until the end of this week.]]></phrase>
   <phrase title="cb_are_you_sure_you_want_to_watch_potw" version_id="14" version_string="1.0.4"><![CDATA[ Are you sure you want to watch this POTW? ]]></phrase>
   <phrase title="cb_most_liked_posts_month" version_id="1" version_string="1.0.0"><![CDATA[Posts with more reaction score of {month}]]></phrase>
   <phrase title="cb_most_liked_posts_week" version_id="5" version_string="1.0.5"><![CDATA[Week of]]></phrase>
   <phrase title="cb_post_of_the_day_updated" version_id="14" version_string="1.0.4"><![CDATA[{title}  {target}.]]></phrase>
   <phrase title="cb_potw_day_alert" version_id="14" version_string="1.0.4"><![CDATA[The post of the day has been updated]]></phrase>
+  <phrase title="cb_potw_demote" version_id="20" version_string="1.0.10"><![CDATA[Remove from POTW]]></phrase>
+  <phrase title="cb_potw_demote_confirm" version_id="20" version_string="1.0.10"><![CDATA[Are you sure you want to remove this post from the POTW page?]]></phrase>
   <phrase title="cb_potw_index_one_day_title" version_id="14" version_string="1.0.4"><![CDATA[Post of the Day]]></phrase>
   <phrase title="cb_potw_index_title" version_id="5" version_string="1.0.5"><![CDATA[Posts of the Week]]></phrase>
   <phrase title="cb_potw_one_day" version_id="14" version_string="1.0.4"><![CDATA[One Day]]></phrase>
+  <phrase title="cb_potw_promote" version_id="20" version_string="1.0.10"><![CDATA[Promote POTW]]></phrase>
+  <phrase title="cb_potw_promote_post" version_id="20" version_string="1.0.10"><![CDATA[Promote to POTW]]></phrase>
+  <phrase title="cb_potw_promoted_badge" version_id="20" version_string="1.0.10"><![CDATA[Promoted post]]></phrase>
+  <phrase title="cb_potw_promoted_posts" version_id="20" version_string="1.0.10"><![CDATA[Promoted posts]]></phrase>
   <phrase title="cb_potw_style_expanded" version_id="1" version_string="1.0.0"><![CDATA[Expanded]]></phrase>
   <phrase title="cb_potw_style_full" version_id="1" version_string="1.0.0"><![CDATA[Full]]></phrase>
   <phrase title="cb_potw_style_simple" version_id="1" version_string="1.0.0"><![CDATA[Simple]]></phrase>
@@ -50,6 +57,8 @@
   <phrase title="option_explain.cb_time_lapse" version_id="1" version_string="1.0.0"><![CDATA[Select the timeLapse to show the more reaction post on the page.]]></phrase>
   <phrase title="option_group.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[Post of the week]]></phrase>
   <phrase title="option_group_description.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[All settings regarding POTW are listed here.]]></phrase>
+  <phrase title="permission.cb_potw_promote" version_id="20" version_string="1.0.10"><![CDATA[Can promote POTW?]]></phrase>
+  <phrase title="permission_interface_group.cb_potw" version_id="20" version_string="1.0.10"><![CDATA[Post of the Week (POTW)]]></phrase>
   <phrase title="potw_watch_alert_day" version_id="14" version_string="1.0.4"><![CDATA[{username} approved  <a {profilePageLinkAttributes}>your vouch</a>.]]></phrase>
   <phrase title="widget_def.cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[Post of Week]]></phrase>
   <phrase title="widget_def_desc.cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[Post of the week]]></phrase>

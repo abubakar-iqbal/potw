@@ -37,13 +37,17 @@ class Potw extends AbstractController
         // Check if the visitor has already watched the posts for the selected timeLapse ('day' or 'week')
         $hasAlreadyWatched = $this->repository('CoderBeams\POTW:Watch')->hasWatchedPOTW($visitor->user_id, $timeLapse);
 
+        // Manually promoted posts, pinned above the list until their week ends
+        $promotedPosts = $this->repository('CoderBeams\POTW:Promoted')->getActivePromotedPosts($visitor);
+
         // Return the response with the necessary data, including the 'hasAlreadyWatched' parameter
         return $this->buildViewResponse(
             $allPosts,
             $weekendArray,
             $config,
             $timeLapse,
-            $hasAlreadyWatched
+            $hasAlreadyWatched,
+            $promotedPosts
         );
     }
 
@@ -66,7 +70,8 @@ class Potw extends AbstractController
         array $weekendArray,
         array $config,
         $timeLapse,
-        $hasAlreadyWatch
+        $hasAlreadyWatch,
+        array $promotedPosts = []
     ) {
         // Paginate the posts
         $paginatedPosts = array_slice(
@@ -84,6 +89,7 @@ class Potw extends AbstractController
             'total' => count($allPosts),
             'weekendArray' => $weekendArray,
             'hasAlreadyWatch' => $hasAlreadyWatch,
+            'promotedPosts' => $promotedPosts,
             'showExpandedTitle' => '',
         ];
 

@@ -5,6 +5,12 @@
         "version_string": "1.0.4",
         "hash": "5a6d0b04abc70f013d63322842f122ee"
     },
+    "cb_are_you_sure_promote_post.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "4810fc4821bc82c19e1a4fd696e091f4"
+    },
     "cb_are_you_sure_you_want_to_watch_potw.txt": {
         "global_cache": false,
         "version_id": 14,
@@ -35,6 +41,18 @@
         "version_string": "1.0.4",
         "hash": "89d61dcf47ee1d81fbeeeccd69dc86aa"
     },
+    "cb_potw_demote.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "d3982c35cb83ed0b63beac029ad9f480"
+    },
+    "cb_potw_demote_confirm.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "a956ed02398a315fe614eb925fd94522"
+    },
     "cb_potw_index_one_day_title.txt": {
         "global_cache": false,
         "version_id": 14,
@@ -52,6 +70,30 @@
         "version_id": 14,
         "version_string": "1.0.4",
         "hash": "7ff1a26c326884c801d887ade65fdbc0"
+    },
+    "cb_potw_promote.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "6480e67caf12a72feeb20ac2f5c6f69d"
+    },
+    "cb_potw_promote_post.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "4e52f87dab5c55c9c2deb4d7a778b51a"
+    },
+    "cb_potw_promoted_badge.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "e3401ae85a0f1f9ec5a31edd46af469d"
+    },
+    "cb_potw_promoted_posts.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "62aff7215b486367038626862f23b736"
     },
     "cb_potw_style_expanded.txt": {
         "global_cache": false,
@@ -298,6 +340,18 @@
         "version_id": 1,
         "version_string": "1.0.0",
         "hash": "836423273f852f32a370b4ab6199aa8e"
+    },
+    "permission.cb_potw_promote.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "2127cc11dcb2e29d08ee1d69a9a280c8"
+    },
+    "permission_interface_group.cb_potw.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "969117c8884e4bb6f77a6eb0d5741fe4"
     },
     "potw_watch_alert_day.txt": {
         "global_cache": false,

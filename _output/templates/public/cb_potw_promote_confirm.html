@@ -1,0 +1,16 @@
+<xf:title>{{ phrase('cb_potw_promote_post') }}</xf:title>
+
+<xf:form action="{{ link('posts/potw-promote', $post) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<div class="block-row">
+				<xf:if is="$post.isPotwPromoted()">
+					{{ phrase('cb_potw_demote_confirm') }}
+				<xf:else />
+					{{ phrase('cb_are_you_sure_promote_post') }}
+				</xf:if>
+			</div>
+		</div>
+		<xf:submitrow submit="{{ $post.isPotwPromoted() ? phrase('cb_potw_demote') : phrase('cb_potw_promote') }}" />
+	</div>
+</xf:form>

@@ -109,6 +109,28 @@ class Setup extends AbstractSetup
     }
 
     /**
+     * Install Step 5: Create the xf_cb_potw_promoted table for manually
+     * promoted posts (pinned on the POTW page until the week ends)
+     */
+    public function installStep5(array $stepParams = [])
+    {
+        $sm = $this->schemaManager();
+
+        if ($sm->tableExists('xf_cb_potw_promoted')) {
+            return;
+        }
+
+        $sm->createTable('xf_cb_potw_promoted', function (Create $table) {
+            $table->addColumn('post_id', 'int')->comment('The promoted post');
+            $table->addColumn('promoted_by', 'int')->comment('User who promoted the post');
+            $table->addColumn('promote_date', 'int')->setDefault(0);
+            $table->addColumn('expiry_date', 'int')->setDefault(0)->comment('End of the week the post was promoted in');
+            $table->addPrimaryKey('post_id');
+            $table->addKey('expiry_date');
+        });
+    }
+
+    /**
      * Upgrade to 1.0.8: add winner tracking
      */
     public function upgrade18Step1(array $stepParams = [])
@@ -127,6 +149,14 @@ class Setup extends AbstractSetup
     public function upgrade19Step1(array $stepParams = [])
     {
         $this->installStep4();
+    }
+
+    /**
+     * Upgrade to 1.0.10: add promoted-post tracking
+     */
+    public function upgrade20Step1(array $stepParams = [])
+    {
+        $this->installStep5();
     }
 
     /**
@@ -151,6 +181,11 @@ class Setup extends AbstractSetup
                 $table->dropColumns('cb_potw_count');
             });
         }
+    }
+
+    public function uninstallStep5(array $stepParams = [])
+    {
+        $this->schemaManager()->dropTable('xf_cb_potw_promoted');
     }
 
     public function uninstallStep4(array $stepParams = [])
