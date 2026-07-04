@@ -23,7 +23,7 @@ class Potw extends AbstractController
         $config = [
             'page' => $page,
             'perPage' => $perPage,
-            'timeLapse' => $options->cb_time_lapse ?? 'week',
+            'timeLapse' => 'week', // POTW is always weekly
             'nodeIds' => $options->cb_potw_applicable_forum ?? [],
             'minimumReaction' => $options->cb_potw_reaction_limit ?? 1,
             'postsInWeeks' => $options->cb_limit_post_per_week ?? 3,

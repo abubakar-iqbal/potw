@@ -20,7 +20,6 @@ namespace XF;
  * @property int|null $cb_potw_limit_char Limit Char
  * @property int|null $cb_potw_per_page Post Per Page
  * @property int|null $cb_potw_reaction_limit Reaction Limit
- * @property string|null $cb_time_lapse TimeLapse
  */
 class Options
 {

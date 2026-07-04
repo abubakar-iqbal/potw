@@ -263,12 +263,6 @@
         "version_string": "1.0.0",
         "hash": "8478afa1e185fe4e9dc9cee1d9a71271"
     },
-    "option.cb_time_lapse.txt": {
-        "global_cache": false,
-        "version_id": 1,
-        "version_string": "1.0.0",
-        "hash": "648cacb3ad476b1e3f35277e1b4fa4bd"
-    },
     "option_explain.cb_enable_potw_on_pub_nav.txt": {
         "global_cache": false,
         "version_id": 8,
@@ -323,12 +317,6 @@
         "version_string": "1.0.0",
         "hash": "77688e6d225c0d6ede3ea8375861f341"
     },
-    "option_explain.cb_time_lapse.txt": {
-        "global_cache": false,
-        "version_id": 1,
-        "version_string": "1.0.0",
-        "hash": "4e504da19145efa2375898e6c7d31b25"
-    },
     "option_group.cb_potw.txt": {
         "global_cache": false,
         "version_id": 1,
@@ -346,6 +334,12 @@
         "version_id": 20,
         "version_string": "1.0.10",
         "hash": "2127cc11dcb2e29d08ee1d69a9a280c8"
+    },
+    "permission_interface.cb_potw.txt": {
+        "global_cache": false,
+        "version_id": 20,
+        "version_string": "1.0.10",
+        "hash": "331a5573f8554855c5528ed06c2e575e"
     },
     "permission_interface_group.cb_potw.txt": {
         "global_cache": false,

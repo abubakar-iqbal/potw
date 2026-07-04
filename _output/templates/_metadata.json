@@ -22,7 +22,7 @@
     "public/cb_potw_index.html": {
         "version_id": 19,
         "version_string": "1.0.9",
-        "hash": "b04a6abe19664a9f9a9539915b1a480a"
+        "hash": "eb68eb69e441d09377bd01248483e5df"
     },
     "public/cb_potw_promote_confirm.html": {
         "version_id": 20,
@@ -32,7 +32,7 @@
     "public/cb_potw_widget.html": {
         "version_id": 13,
         "version_string": "1.0.3",
-        "hash": "2c07694be96e7c9cbd3f8767547af590"
+        "hash": "c9e5e8cc7d474ef3ea03f574bffea12c"
     },
     "public/potw_watch_confirm.html": {
         "version_id": 14,

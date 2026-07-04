@@ -35,6 +35,10 @@ class Setup extends AbstractSetup
      */
     public function installStep1(array $stepParams = [])
     {
+        if ($this->schemaManager()->tableExists('xf_potw_watch')) {
+            return;
+        }
+
         $this->schemaManager()->createTable('xf_potw_watch', function (Create $table) {
             $table->addColumn('user_id', 'int')->comment('User who is watching the posts');
             $table->addColumn('time_lapse', 'enum', ['values' => ['day', 'week']])->comment(

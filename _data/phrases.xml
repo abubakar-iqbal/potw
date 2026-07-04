@@ -44,7 +44,6 @@
   <phrase title="option.cb_potw_limit_char" version_id="10" version_string="1.0.1"><![CDATA[Limit Char]]></phrase>
   <phrase title="option.cb_potw_per_page" version_id="1" version_string="1.0.0"><![CDATA[Post Per Page]]></phrase>
   <phrase title="option.cb_potw_reaction_limit" version_id="1" version_string="1.0.0"><![CDATA[Reaction Limit]]></phrase>
-  <phrase title="option.cb_time_lapse" version_id="1" version_string="1.0.0"><![CDATA[TimeLapse]]></phrase>
   <phrase title="option_explain.cb_enable_potw_on_pub_nav" version_id="8" version_string="1.0.8"><![CDATA[If enabled, it will show on the public navigation.]]></phrase>
   <phrase title="option_explain.cb_limit_post_per_week" version_id="1" version_string="1.0.0"><![CDATA[Number of post want to show in one week.]]></phrase>
   <phrase title="option_explain.cb_posts_weeks" version_id="1" version_string="1.0.0"><![CDATA[Please enter the number of weeks you want to show their weeks.]]></phrase>
@@ -54,10 +53,10 @@
   <phrase title="option_explain.cb_potw_limit_char" version_id="10" version_string="1.0.1"><![CDATA[Entered the number of words will be shown by default.]]></phrase>
   <phrase title="option_explain.cb_potw_per_page" version_id="1" version_string="1.0.0"><![CDATA[Please enter the number you want to show on the homepage.]]></phrase>
   <phrase title="option_explain.cb_potw_reaction_limit" version_id="1" version_string="1.0.0"><![CDATA[Please enter the minimum reaction limit of the POTW.]]></phrase>
-  <phrase title="option_explain.cb_time_lapse" version_id="1" version_string="1.0.0"><![CDATA[Select the timeLapse to show the more reaction post on the page.]]></phrase>
   <phrase title="option_group.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[Post of the week]]></phrase>
   <phrase title="option_group_description.cb_potw" version_id="1" version_string="1.0.0"><![CDATA[All settings regarding POTW are listed here.]]></phrase>
   <phrase title="permission.cb_potw_promote" version_id="20" version_string="1.0.10"><![CDATA[Can promote POTW?]]></phrase>
+  <phrase title="permission_interface.cb_potw" version_id="20" version_string="1.0.10"><![CDATA[POTW]]></phrase>
   <phrase title="permission_interface_group.cb_potw" version_id="20" version_string="1.0.10"><![CDATA[Post of the Week (POTW)]]></phrase>
   <phrase title="potw_watch_alert_day" version_id="14" version_string="1.0.4"><![CDATA[{username} approved  <a {profilePageLinkAttributes}>your vouch</a>.]]></phrase>
   <phrase title="widget_def.cb_potw_widget" version_id="13" version_string="1.0.3"><![CDATA[Post of Week]]></phrase>

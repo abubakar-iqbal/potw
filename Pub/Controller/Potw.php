@@ -15,24 +15,11 @@ class Potw extends AbstractController
         // Get the config from the options
         $config = $this->getConfigFromOptions($options, $params);
 
-        // Determine timeLapse based on the selected time period
-        $timeLapse = $options->cb_time_lapse ?? 'week';  // Default to 'week' if not set
-        if (isset($params->timeLapse) && $params->timeLapse === 'day') {
-            $timeLapse = 'day';  // Set to 'day' if selected
-        }
+        // POTW is always weekly
+        $timeLapse = 'week';
 
         $weekService = new \CoderBeams\POTW\Service\Week($this->app);
-
-        // Handle the timeLapse logic
-        if ($timeLapse == 'day') {
-            // Post of the Day - Fetch data for the last day
-            $dayPosts = $weekService->processDailyPosts($visitor, $config);
-            $allPosts = $dayPosts['posts']; // The fetched posts for the day
-            $weekendArray = $dayPosts['weekendArray']; // Any additional metadata you need
-        } else {
-            // Post of the Week - Fetch data for the last week
-            list($allPosts, $weekendArray) = $weekService->processWeeklyPosts($visitor, $config);
-        }
+        list($allPosts, $weekendArray) = $weekService->processWeeklyPosts($visitor, $config);
 
         // Check if the visitor has already watched the posts for the selected timeLapse ('day' or 'week')
         $hasAlreadyWatched = $this->repository('CoderBeams\POTW:Watch')->hasWatchedPOTW($visitor->user_id, $timeLapse);
@@ -57,7 +44,7 @@ class Potw extends AbstractController
         return [
             'page' => $this->filterPage($params->page),
             'perPage' => $options->cb_potw_per_page,
-            'timeLapse' => $options->cb_time_lapse, // Admin-selected time frame (day/week)
+            'timeLapse' => 'week',
             'nodeIds' => $options->cb_potw_applicable_forum,
             'minimumReaction' => $options->cb_potw_reaction_limit,
             'postsInWeeks' => $options->cb_limit_post_per_week,
@@ -80,6 +67,17 @@ class Potw extends AbstractController
             $config['perPage']
         );
 
+        // Only keep week headings whose posts are on the current page,
+        // otherwise every page renders every week's heading (empty sections)
+        $pagePostIds = array_column($paginatedPosts, 'post_id');
+        $pageWeekendArray = [];
+        foreach ($weekendArray as $weekKey => $postIds) {
+            $idsOnPage = array_values(array_intersect($postIds, $pagePostIds));
+            if ($idsOnPage) {
+                $pageWeekendArray[$weekKey] = $idsOnPage;
+            }
+        }
+
         // Prepare view parameters
         $viewParams = [
             'allPosts' => $paginatedPosts,
@@ -87,7 +85,7 @@ class Potw extends AbstractController
             'page' => $config['page'],
             'timeLapse' => $timeLapse,
             'total' => count($allPosts),
-            'weekendArray' => $weekendArray,
+            'weekendArray' => $pageWeekendArray,
             'hasAlreadyWatch' => $hasAlreadyWatch,
             'promotedPosts' => $promotedPosts,
             'showExpandedTitle' => '',

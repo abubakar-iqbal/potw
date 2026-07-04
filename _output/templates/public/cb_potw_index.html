@@ -19,10 +19,14 @@
 
     <div class="blocks">
         <h2 class="block-header block-formSectionHeader">
-            <span>{{ phrase('cb_potw_promoted_posts') }}</span>
+            <span class="collapseTrigger collapseTrigger--block is-active"
+                  data-xf-click="toggle"
+                  data-target="< :up :next">
+                <span>{{ phrase('cb_potw_promoted_posts') }}</span>
+            </span>
         </h2>
 
-        <div class="block-body">
+        <div class="block-body block-body--collapsible is-active">
             <xf:foreach loop="$promotedPosts" value="$post">
                 <div class="block-container recent_news" data-xf-init="lightbox">
                     <h4 class="block-header">
